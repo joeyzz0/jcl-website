@@ -571,7 +571,8 @@ code{font-family:var(--mono);font-size:.92em;background:var(--bg-2);border:1px s
   <span class="t-k">"install_from"</span>: <span class="t-s">"<a href="https://www.curseforge.com/minecraft/modpacks/joeys-cobblemon-league" target="_blank" rel="noopener">CurseForge</a>"</span>,  <span class="t-c">// modrinth coming soon</span>
   <span class="t-k">"when_asked"</span>: <span class="t-w">"ALL FILES"</span>,  <span class="t-c">// required, or the pack won't work</span>
   <span class="t-k">"discord"</span>: <span class="t-s">"<a href="https://discord.gg/QgD4WfJ9t6" target="_blank" rel="noopener">discord.gg/QgD4WfJ9t6</a>"</span>,
-  <span class="t-k">"twitch"</span>: <span class="t-s">"<a href="https://twitch.tv/joeyzz0" target="_blank" rel="noopener">twitch.tv/joeyzz0</a>"</span>
+  <span class="t-k">"twitch"</span>: <span class="t-s">"<a href="https://twitch.tv/joeyzz0" target="_blank" rel="noopener">twitch.tv/joeyzz0</a>"</span>,
+  <span class="t-k">"tiktok"</span>: <span class="t-s">"<a href="https://www.tiktok.com/@joeyzz0" target="_blank" rel="noopener">tiktok.com/@joeyzz0</a>"</span>
 }</code></pre>
         </section>
 
@@ -896,6 +897,7 @@ code{font-family:var(--mono);font-size:.92em;background:var(--bg-2);border:1px s
 <pre class="codeblock"><code><span class="t-c">[community]</span>
 <span class="t-k">discord</span>    = <span class="t-s">"<a href="https://discord.gg/QgD4WfJ9t6" target="_blank" rel="noopener">discord.gg/QgD4WfJ9t6</a>"</span>
 <span class="t-k">twitch</span>     = <span class="t-s">"<a href="https://twitch.tv/joeyzz0" target="_blank" rel="noopener">twitch.tv/joeyzz0</a>"</span>
+<span class="t-k">tiktok</span>     = <span class="t-s">"<a href="https://www.tiktok.com/@joeyzz0" target="_blank" rel="noopener">tiktok.com/@joeyzz0</a>"</span>
 <span class="t-k">instagram</span>  = <span class="t-s">"<a href="https://instagram.com/joeyzz0" target="_blank" rel="noopener">instagram.com/joeyzz0</a>"</span>
 
 <span class="t-c">[modpack]</span>
@@ -1221,7 +1223,7 @@ const L = (href, text) => `<a href="${href}" target="_blank" rel="noopener">${te
 const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const CMDS = {
   help(){
-    [["ip","copy the server address"],["status","is the server open"],["version","what’s live right now"],["ls","list the site’s files"],["cd <file>","jump to a file"],["download","where to get the pack"],["frontier","how to reach the frontier"],["patchnotes","read the 1.5.0 notes"],["discord","join the community"],["twitch","watch the streams"],["instagram","clips and posts"],["whoami","who are you"],["clear","clear the screen"],["exit","close the terminal"]]
+    [["ip","copy the server address"],["status","is the server open"],["version","what’s live right now"],["ls","list the site’s files"],["cd <file>","jump to a file"],["download","where to get the pack"],["frontier","how to reach the frontier"],["patchnotes","read the 1.5.0 notes"],["discord","join the community"],["twitch","watch the streams"],["tiktok","stream clips"],["instagram","clips and posts"],["whoami","who are you"],["clear","clear the screen"],["exit","close the terminal"]]
       .forEach(([c, d]) => lineHTML(`<span class="acc">${esc(c.padEnd(12, " "))}</span><span class="dim">${d}</span>`));
   },
   async ip(){ const ok = await copyIP(); line(IP + (ok ? "  (copied)" : ""), "acc"); scrollOut(); },
@@ -1250,6 +1252,7 @@ const CMDS = {
   patchnotes(){ goTo("notes"); },
   discord(){ lineHTML(L("https://discord.gg/QgD4WfJ9t6","discord.gg/QgD4WfJ9t6")); },
   twitch(){ lineHTML(L("https://twitch.tv/joeyzz0","twitch.tv/joeyzz0")); },
+  tiktok(){ lineHTML(L("https://www.tiktok.com/@joeyzz0","tiktok.com/@joeyzz0")); },
   instagram(){ lineHTML(L("https://instagram.com/joeyzz0","instagram.com/joeyzz0")); },
   whoami(){ line("trainer. open your badge box with shift+b."); },
   sudo(){ line("nice try. there’s no shortcut here, not even for money.", "acc"); },
